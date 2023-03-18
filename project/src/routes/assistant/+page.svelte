@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import {
       Header,
       HeaderNav,
@@ -12,6 +14,14 @@
     } from "carbon-components-svelte";
   
     let isSideNavOpen = false;
+    let uploader;
+    let textin;
+    let question;
+
+    /**
+     * @type {any}
+     */
+    let files;
 
     import { FileUploaderButton } from "carbon-components-svelte";
 
@@ -22,6 +32,35 @@
     import { ButtonSet, Button } from "carbon-components-svelte";
 
     import { CodeSnippet } from "carbon-components-svelte";
+
+    function sum(){
+      console.log("here");
+      fetch('/docsum', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({docs:[textin]})
+    })
+      .then(response => response.text())
+      .then(data => console.log(data))
+      .catch(error => console.error(error))
+    }
+
+    function qna(){
+      console.log("here");
+      fetch('/qna', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({docs:[textin],question:question})
+    })
+      .then(response => response.text())
+      .then(data => console.log(data))
+      .catch(error => console.error(error))
+    }
+    
 
   </script>
 
@@ -47,24 +86,24 @@
               <Tab label="Summarisation" />
               <svelte:fragment slot="content">
                 <TabContent style="width: 100%">
-                  <FileUploaderButton labelText="Add files" />
-                  <TextInput labelText="" placeholder="Or enter sample text..." style="width: 100%; float: right; margin-top: 15px" />
-                  <TextInput labelText="" placeholder="Ask your question..." style="width: 50%; float: right; margin-top: 15px; margin-bottom: 15px;" />
+                  <FileUploaderButton labelText="Add files" bind:this={uploader} bind:files />
+                  <TextInput bind:value={textin} labelText="" placeholder="Or enter sample text..." style="width: 100%; float: right; margin-top: 15px" />
+                  <TextInput bind:value={question} labelText="" placeholder="Ask your question..." style="width: 50%; float: right; margin-top: 15px; margin-bottom: 15px;" />
                   <Button kind="danger-tertiary">Cancel</Button>
-                  <Button>Submit</Button>
+                  <Button  on:click={qna}>Submit</Button>
                   <h3 style="margin-top: 15px">
                     Output:
-                    <CodeSnippet code="text" style="margin-top: 15px"/>
+                    <CodeSnippet code="text"/>
                   </h3>
                 </TabContent>
                 <TabContent>
-                  <FileUploaderButton labelText="Add files" />
-                  <TextInput labelText="" placeholder="Or enter your text..." style="width: 100%; float: right; margin-top: 15px; margin-bottom: 15px;" />
+                  <FileUploaderButton labelText="Add files" bind:this={uploader} bind:files/>
+                  <TextInput bind:value={textin} labelText="" placeholder="Or enter your text..." style="width: 100%; float: right; margin-top: 15px; margin-bottom: 15px;" />
                   <Button kind="danger-tertiary">Cancel</Button>
-                  <Button>Submit</Button>
+                  <Button on:click={sum}>Submit</Button>
                   <h3 style="margin-top: 15px">
                     Output:
-                    <CodeSnippet code="text" style="margin-top: 15px"/>
+                    <CodeSnippet code="text"/>
                   </h3>
                 </TabContent>
               </svelte:fragment>
