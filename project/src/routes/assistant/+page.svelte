@@ -22,7 +22,7 @@
     /**
      * @type {any}
      */
-    let files;
+    let files = [""];
 
     import { FileUploaderButton } from "carbon-components-svelte";
 
@@ -42,7 +42,7 @@
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({docs:[textin]})
+      body: JSON.stringify({docs:[textin,files[0]]})
     })
       .then(response => response.text())
       .then(data => output = data)
