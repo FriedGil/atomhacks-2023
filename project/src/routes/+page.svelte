@@ -22,13 +22,5 @@
 
 </script>
 <h1 style="">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-{#await t()}
-	<p>...waiting</p>
-{:then res}
-	<p>The number is {res}</p>
-{:catch error}
-	<p style="color: red">{error.message}</p>
-{/await}
-
+<button on:click={t}/>
 
