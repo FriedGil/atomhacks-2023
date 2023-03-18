@@ -31,9 +31,9 @@
       <SkipToContent />
     </svelte:fragment>
     <HeaderNav>
-      <HeaderNavItem href="https://atomhacks-2023.vercel.app/" text="Home" />
-      <HeaderNavItem href="https://atomhacks-2023.vercel.app/assistant" text="DWGB" />
-      <HeaderNavItem href="https://atomhacks-2023.vercel.app/about" text="About" />
+        <HeaderNavItem href="/" text="Home" />
+        <HeaderNavItem href="/assistant" text="DWGB" />
+        <HeaderNavItem href="/about" text="About" />
     </HeaderNav>
   </Header>
   
