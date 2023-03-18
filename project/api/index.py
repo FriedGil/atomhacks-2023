@@ -20,17 +20,21 @@ model = OpenAI(openai_api_key=API_KEY, temperature=0.9)
 sum_chain = load_summarize_chain(model, chain_type="map_reduce")
 qna_chain = load_qa_chain(model, chain_type="stuff")
 
-@app.route("/docsum", methods=["POST"])
+@app.route("/api/docsum", methods=["POST"])
 def docsum():
     docs = [Document(page_content=doc) for doc in request.json["docs"]]
     res = sum_chain.run(docs)
     return res
 
-@app.route("/qna", methods=["POST"])
+@app.route("/api/qna", methods=["POST"])
 def qna():
     docs = [Document(page_content=doc) for doc in request.json["docs"]]
     res = qna_chain.run(input_documents = docs, question = request.json["question"])
     return res
+
+@app.route("/api/")
+def index():
+    return "shhh"
 
 if __name__ == "__main__":
     app.run()
