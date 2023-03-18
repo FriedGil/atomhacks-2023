@@ -17,7 +17,7 @@
     let uploader;
     let textin;
     let question;
-    let output = "output here";
+    let output = "Output will be produced here.";
 
     /**
      * @type {any}
@@ -35,14 +35,14 @@
     import { CodeSnippet } from "carbon-components-svelte";
 
     function sum(){
-      output = "loading...";
+      output = "Loading...";
       console.log("here");
       fetch('/api/docsum', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({docs:[textin,files[0]]})
+      body: JSON.stringify( { docs:[textin,] } )
     })
       .then(response => response.text())
       .then(data => output = data)
@@ -50,7 +50,7 @@
     }
 
     function qna(){
-      output = "loading...";
+      output = "Loading...";
       console.log("here");
       fetch('/api/qna', {
       method: 'POST',
@@ -95,7 +95,6 @@
                   <Button kind="danger-tertiary">Cancel</Button>
                   <Button  on:click={qna}>Submit</Button>
                   <h3 style="margin-top: 15px">
-                    {output}
                     <CodeSnippet code="{output}"/>
                   </h3>
                 </TabContent>
