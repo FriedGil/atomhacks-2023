@@ -37,7 +37,7 @@
     function sum(){
       output = "loading...";
       console.log("here");
-      fetch('/api/docsum', {
+      fetch('/docsum', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -52,7 +52,7 @@
     function qna(){
       output = "loading...";
       console.log("here");
-      fetch('/api/qna', {
+      fetch('/qna', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
