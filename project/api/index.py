@@ -23,7 +23,7 @@ qna_chain = load_qa_chain(model, chain_type="stuff")
 @app.route("/api/docs", methods=["POST"])
 def docs():
     docs = [Document(page_content=doc) for doc in request.json["docs"]]
-    res = sum_chain.run(docs)
+    res = qna_chain.run(input_documents = docs, question = "Summarize this document.")
     return res
 
 @app.route("/api/qna", methods=["POST"])
