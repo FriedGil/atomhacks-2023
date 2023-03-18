@@ -21,7 +21,7 @@ sum_chain = load_summarize_chain(model, chain_type="map_reduce")
 qna_chain = load_qa_chain(model, chain_type="stuff")
 
 @app.route("/api/docs", methods=["POST"])
-def docsum():
+def docs():
     docs = [Document(page_content=doc) for doc in request.json["docs"]]
     res = sum_chain.run(docs)
     return res
