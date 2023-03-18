@@ -30,11 +30,12 @@
 
     import { TextInput } from "carbon-components-svelte";
 
-    import { ButtonSet, Button } from "carbon-components-svelte";
+    import { Button } from "carbon-components-svelte";
 
     import { CodeSnippet } from "carbon-components-svelte";
 
     function sum(){
+      output = "loading...";
       console.log("here");
       fetch('/docsum', {
       method: 'POST',
@@ -49,6 +50,7 @@
     }
 
     function qna(){
+      output = "loading...";
       console.log("here");
       fetch('/qna', {
       method: 'POST',
