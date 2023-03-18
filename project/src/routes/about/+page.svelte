@@ -19,18 +19,13 @@ let isSideNavOpen = false;
     <SkipToContent />
   </svelte:fragment>
   <HeaderNav>
-    <HeaderNavItem href="/" text="Link 1" />
-    <HeaderNavItem href="/" text="Link 2" />
-    <HeaderNavItem href="/" text="Link 3" />
-    <HeaderNavMenu text="Menu">
-      <HeaderNavItem href="/" text="Link 1" />
-      <HeaderNavItem href="/" text="Link 2" />
-      <HeaderNavItem href="/" text="Link 3" />
-    </HeaderNavMenu>
+    <HeaderNavItem href="/" text="Home" />
+    <HeaderNavItem href="/" text="DWGB" />
+    <HeaderNavItem href="/" text="About" />
   </HeaderNav>
 </Header>
 
-<Content style="background-color: #f4f8fb">
+<Content>
   <Grid>
     <Row>
       <Column>
