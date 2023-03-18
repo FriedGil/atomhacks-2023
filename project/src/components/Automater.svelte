@@ -1,17 +1,30 @@
 <script>
-        import { FileUploaderButton,      ProgressIndicator,
-      ProgressStep,
-      Button,} from "carbon-components-svelte";
-        import { ComboBox } from "carbon-components-svelte";
-        let currentIndex = 0;
+// @ts-nocheck
 
+      import { FileUploaderButton,      ProgressIndicator, ProgressStep, Button,} from "carbon-components-svelte";
+      import { ComboBox } from "carbon-components-svelte";
+    
+      let currentIndex = 0;
+      let fileUploader;
+      let file;
 
+        
+    const key = import.meta.env.VITE_OPENAI_API_KEY;
+    import { OpenAI } from "langchain/llms";
+    // import {  CheerioWebBaseLoader} from "langchain/document_loaders";
+    import { loadSummarizationChain, AnalyzeDocumentChain} from "langchain/chains";
+    import { onMount } from "svelte";
 
+    let selectedModel;
 </script>
 
 <body>
       
-    <FileUploaderButton labelText="Add files"/>
+    <FileUploaderButton 
+    bind:file
+    labelText="Add files"
+    on:change={console.log(file.text)}
+    />
 
     <ComboBox
     titleText="Add Source"
@@ -27,6 +40,8 @@
     <ComboBox
   titleText="Select Chain"
   placeholder="Search Here"
+  this:bind={selectedModel}
+
   items={[
     { id: "0", text: "Q&A" },
     { id: "1", text: "SUMMARIZATION" },
@@ -48,9 +63,7 @@
     />
 
   </ProgressIndicator>
-  
-  
-  
+    
   
 
 

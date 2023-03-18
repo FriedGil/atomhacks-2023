@@ -1,44 +1,29 @@
-<!-- <h1>Hi</h1>
- <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p> -->
+<script>
+  import { ImageLoader } from "carbon-components-svelte";
+  import {
+Header,
+HeaderNav,
+HeaderNavItem,
+HeaderNavMenu,
+SkipToContent,
+Content,
+Grid,
+Row,
+Column,
+} from "carbon-components-svelte";
+let isSideNavOpen = false;
+</script>
 
- <script>
-    import {
-      Header,
-      HeaderNav,
-      HeaderNavItem,
-      HeaderNavMenu,
-      SkipToContent,
-      Content,
-      Grid,
-      Row,
-      Column,
-    } from "carbon-components-svelte";
-  
-    let isSideNavOpen = false;
-  </script>
-  
-  <Header company="IBM" platformName="Carbon Svelte" bind:isSideNavOpen>
-    <svelte:fragment slot="skip-to-content">
-      <SkipToContent />
-    </svelte:fragment>
-    <HeaderNav>
-      <HeaderNavItem href="/" text="Link 1" />
-      <HeaderNavItem href="/" text="Link 2" />
-      <HeaderNavItem href="/" text="Link 3" />
-      <HeaderNavMenu text="Menu">
-        <HeaderNavItem href="/" text="Link 1" />
-        <HeaderNavItem href="/" text="Link 2" />
-        <HeaderNavItem href="/" text="Link 3" />
-      </HeaderNavMenu>
-    </HeaderNav>
-  </Header>
-  
-  <Content>
-    <Grid>
-      <Row>
-        <Column>
-          <h1>Welcome</h1>
-        </Column>
-      </Row>
-    </Grid>
-  </Content>
+<Header company="Atomhacks" platformName="DWGB" bind:isSideNavOpen>
+  <svelte:fragment slot="skip-to-content">
+    <SkipToContent />
+  </svelte:fragment>
+  <HeaderNav>
+    <HeaderNavItem href="/" text="Home" />
+    <HeaderNavItem href="/" text="DWGB" />
+    <HeaderNavItem href="/" text="About" />
+  </HeaderNav>
+</Header>
+
+<ImageLoader
+src="https://cdn.discordapp.com/attachments/1081330544362668163/1086732120350785617/imgnew.jpg"/>
