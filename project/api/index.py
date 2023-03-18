@@ -8,4 +8,4 @@ def home():
 
 @app.route("/about", methods=["POST"])
 def about():
-    return 'About'
+    return 'About'x``
