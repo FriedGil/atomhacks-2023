@@ -20,7 +20,7 @@ model = OpenAI(openai_api_key=API_KEY, temperature=0.9)
 sum_chain = load_summarize_chain(model, chain_type="map_reduce")
 qna_chain = load_qa_chain(model, chain_type="stuff")
 
-@app.route("/api/docsum", methods=["POST"])
+@app.route("/api/docs", methods=["POST"])
 def docsum():
     docs = [Document(page_content=doc) for doc in request.json["docs"]]
     res = sum_chain.run(docs)
