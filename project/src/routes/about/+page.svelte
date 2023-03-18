@@ -20,8 +20,8 @@ let isSideNavOpen = false;
   </svelte:fragment>
   <HeaderNav>
     <HeaderNavItem href="/" text="Home" />
-    <HeaderNavItem href="/" text="DWGB" />
-    <HeaderNavItem href="/" text="About" />
+    <HeaderNavItem href="/assistant" text="DWGB" />
+    <HeaderNavItem href="/about" text="About" />
   </HeaderNav>
 </Header>
 

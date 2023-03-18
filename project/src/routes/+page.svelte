@@ -19,9 +19,9 @@ let isSideNavOpen = false;
     <SkipToContent />
   </svelte:fragment>
   <HeaderNav>
-    <HeaderNavItem href="/" text="Home" />
-    <HeaderNavItem href="/" text="DWGB" />
-    <HeaderNavItem href="/" text="About" />
+    <HeaderNavItem href="https://atomhacks-2023.vercel.app/" text="Home" />
+    <HeaderNavItem href="https://atomhacks-2023.vercel.app/assistant" text="DWGB" />
+    <HeaderNavItem href="https://atomhacks-2023.vercel.app/about" text="About" />
   </HeaderNav>
 </Header>
 
