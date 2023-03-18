@@ -96,7 +96,7 @@
                   <Button  on:click={qna}>Submit</Button>
                   <h3 style="margin-top: 15px">
                     {output}
-                    <CodeSnippet code="text"/>
+                    <CodeSnippet code="{output}"/>
                   </h3>
                 </TabContent>
                 <TabContent>
@@ -105,8 +105,7 @@
                   <Button kind="danger-tertiary">Cancel</Button>
                   <Button on:click={sum}>Submit</Button>
                   <h3 style="margin-top: 15px">
-                    {output}
-                    <CodeSnippet code="text"/>
+                    <CodeSnippet code="{output}"/>
                   </h3>
                 </TabContent>
               </svelte:fragment>
