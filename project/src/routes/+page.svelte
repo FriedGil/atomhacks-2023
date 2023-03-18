@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import { OpenAI } from "langchain/llms";
     import { loadSummarizationChain } from "langchain/chains";
     import { AnalyzeDocumentChain } from "langchain/chains";
@@ -22,5 +24,5 @@
 
 </script>
 <h1 style="">Welcome to SvelteKit</h1>
-<button on:click={t}/>
+<button on:click={console.log(import.meta.env.VITE_OPENAI_API_KEY)}/>
 
