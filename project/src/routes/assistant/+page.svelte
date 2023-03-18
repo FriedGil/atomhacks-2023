@@ -36,7 +36,7 @@
 
     function sum(){
       output = "Loading...";
-      console.log("here");
+      console.log("here 2");
       fetch('/api/docsum', {
       method: 'POST',
       headers: {
