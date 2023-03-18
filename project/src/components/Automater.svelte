@@ -30,12 +30,9 @@
   items={[
     { id: "0", text: "Q&A" },
     { id: "1", text: "SUMMARIZATION" },
-
     ]
     }/>
 
-
-  
   <ProgressIndicator bind:currentIndex>
     <ProgressStep
       label="Data Source"
