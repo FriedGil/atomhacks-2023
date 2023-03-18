@@ -10,6 +10,7 @@
       Row,
       Column,
     } from "carbon-components-svelte";
+    import Automater from "../../components/Automater.svelte";
   
     let isSideNavOpen = false;
   </script>
@@ -34,7 +35,7 @@
     <Grid>
       <Row>
         <Column>
-          <h1>Welcome</h1>
+          <Automater/>
         </Column>
       </Row>
     </Grid>
