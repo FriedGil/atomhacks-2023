@@ -17,6 +17,7 @@
     let uploader;
     let textin;
     let question;
+    let output = "output here";
 
     /**
      * @type {any}
@@ -43,7 +44,7 @@
       body: JSON.stringify({docs:[textin]})
     })
       .then(response => response.text())
-      .then(data => console.log(data))
+      .then(data => output = data)
       .catch(error => console.error(error))
     }
 
@@ -57,7 +58,7 @@
       body: JSON.stringify({docs:[textin],question:question})
     })
       .then(response => response.text())
-      .then(data => console.log(data))
+      .then(data => output = data)
       .catch(error => console.error(error))
     }
     
@@ -92,7 +93,7 @@
                   <Button kind="danger-tertiary">Cancel</Button>
                   <Button  on:click={qna}>Submit</Button>
                   <h3 style="margin-top: 15px">
-                    Output:
+                    {output}
                     <CodeSnippet code="text"/>
                   </h3>
                 </TabContent>
@@ -102,7 +103,7 @@
                   <Button kind="danger-tertiary">Cancel</Button>
                   <Button on:click={sum}>Submit</Button>
                   <h3 style="margin-top: 15px">
-                    Output:
+                    {output}
                     <CodeSnippet code="text"/>
                   </h3>
                 </TabContent>
