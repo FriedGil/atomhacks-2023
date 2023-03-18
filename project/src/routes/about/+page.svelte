@@ -34,10 +34,10 @@ let isSideNavOpen = false;
   <Grid>
     <Row>
       <Column>
-              <div style="height: 3rem; font-size: 24px; ">About</div>
-              <div style="background-color: white; height: 10rem; width: 60%; display:inline-block"></div>
+              <div style="height: 3rem; font-size: 36px; font-weight: bold;">About</div>
+              <div style="background-color: white; height: 10rem; width: 60%; display:inline-block; border: 5px solid; border-color: #ffffff #b2d6a3 #b2d6a3 #fff"></div>
               <div style="height: 10rem; font-size: 16px; background-color: #101e33; height: 10rem; width: 38%; 
-                display:inline-block; float: right;"> </div>
+                display:inline-block; float: right; border: 5px solid; border-color: #101e33 #b2d6a3 #b2d6a3 #101e33"> </div>
       </Column>
     </Row>
   </Grid>
